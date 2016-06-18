@@ -2,29 +2,30 @@
 
 SDL2 Dynamic-link library required for building.
 
-You may download it from here
-https://www.libsdl.org/download-2.0.php
+You may download it from [here](https://www.libsdl.org/download-2.0.php "SDL2")
 
 
-Building:
+## Building:
 
 
-Enter the folder named build
+### Enter the folder named build
+
  
-cd build
+	cd build
 
 
-Generate MakeFile using cmake
-
-cmake ..
+### Generate MakeFile using cmake
 
 
-Build by make
-
-make
+	cmake ..
 
 
+### Build by make
 
-Running the program:
+	make
 
-./t-rex-runner
+
+
+## Running the program:
+
+	./t-rex-runner
