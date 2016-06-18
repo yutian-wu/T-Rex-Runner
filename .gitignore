@@ -1,0 +1,10 @@
+.DS_Store/
+CMakeCache.txt		
+cmake_install.cmake
+CMakeFiles		
+Makefile
+CMakeFiles/
+Resources/.DS_Store
+.DS_Store
+CMakeCache.txt
+.CMakeLists.txt.swp
