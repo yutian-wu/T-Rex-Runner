@@ -1,5 +1,11 @@
 ![demo](demo/t-rex.gif)
 
+Jump: SPACE
+
+Accelerate: -> (LEFT)
+
+Decelerate: <- (RIGHT)
+
 
 
 ## Building:
