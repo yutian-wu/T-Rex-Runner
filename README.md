@@ -2,10 +2,11 @@
 
 Jump: SPACE
 
-Accelerate: -> (LEFT)
+Accelerate: LEFT
 
-Decelerate: <- (RIGHT)
+Decelerate: RIGHT
 
+Gravitate: DOWN
 
 
 ## Building:
