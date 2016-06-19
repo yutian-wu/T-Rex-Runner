@@ -1,5 +1,5 @@
 //
-//  game_env.hpp
+//  game_env.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -11,13 +11,6 @@
 
 #include <stdio.h>
 
-typedef enum
-{
-	LEFT,
-	RIGHT,
-	JUMP
-}
-GameKey;
 
 namespace TRex
 {

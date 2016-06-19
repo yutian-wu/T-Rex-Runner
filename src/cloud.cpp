@@ -7,8 +7,8 @@
 //
 
 // LOCAL
-#include "cloud.hpp"
-#include "game_env.hpp"
+#include "cloud.h"
+#include "game_env.h"
 
 // CPP
 #include <stdlib.h>

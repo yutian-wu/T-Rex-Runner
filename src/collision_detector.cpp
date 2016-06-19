@@ -8,8 +8,8 @@
 
 
 // LOCAL
-#include "collision_detector.hpp"
-#include "game_env.hpp"
+#include "collision_detector.h"
+#include "game_env.h"
 
 
 CollisionDetector::CollisionDetector(ObjectsManager* obstacles, GameObject* dino)

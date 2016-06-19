@@ -1,5 +1,5 @@
 //
-//  input.hpp
+//  input.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -9,16 +9,18 @@
 #ifndef input_hpp
 #define input_hpp
 
-#include <stdio.h>
 
+// LOCAL
+#include "TRexGame.h"
 
+class Input
+{
 
-
-
-
-
-
-
+public:
+	virtual ~Input();
+	virtual void Init() = 0;
+	virtual GameCommand GetCommand() = 0;
+};
 
 
 

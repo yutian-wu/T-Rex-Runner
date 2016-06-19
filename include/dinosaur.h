@@ -1,5 +1,5 @@
 //
-//  dinosaur.hpp
+//  dinosaur.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -10,7 +10,7 @@
 #define dinosaur_hpp
 
 // LOCAL
-#include "game_object.hpp"
+#include "game_object.h"
 
 enum DINO_STATE
 {

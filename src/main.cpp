@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "external_controller.hpp"
+#include "external_controller.h"
 
 
 int main(int argc, const char * argv[]) {

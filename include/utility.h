@@ -1,5 +1,5 @@
 //
-//  utility.hpp
+//  utility.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-12.

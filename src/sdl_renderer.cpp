@@ -15,8 +15,8 @@
 #include <SDL2_image/SDL_image.h>
 
 // LOCAL
-#include "sdl_renderer.hpp"
-#include "game_env.hpp"
+#include "sdl_renderer.h"
+#include "game_env.h"
 
 
 const int WINDOW_X = 200;

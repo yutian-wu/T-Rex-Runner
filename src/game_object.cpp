@@ -11,10 +11,10 @@
 #include <math.h>
 
 // LOCAL
-#include "game_object.hpp"
-#include "renderer.hpp"
-#include "game_env.hpp"
-#include "utility.hpp"
+#include "game_object.h"
+#include "renderer.h"
+#include "game_env.h"
+#include "utility.h"
 
 
 

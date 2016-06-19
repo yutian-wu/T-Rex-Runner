@@ -18,10 +18,11 @@
 #include "SDL2/SDL_thread.h"
 
 // LOCAL
-#include "external_controller.hpp"
-#include "sdl_renderer.hpp"
-#include "TRexGame.hpp"
-#include "game_env.hpp"
+#include "external_controller.h"
+#include "sdl_renderer.h"
+#include "sdl_input.h"
+#include "TRexGame.h"
+#include "game_env.h"
 
 
 
@@ -39,7 +40,10 @@ void Controller::Play()
 	Renderer* renderer = new SDLRenderer();
 	renderer->Init();
 	
-	TRexGame game(renderer);
+	Input* input = new SDLInput();
+	input->Init();
+
+	TRexGame game(renderer, input);
 	
 	game.Play();
 	

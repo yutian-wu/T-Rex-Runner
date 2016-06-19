@@ -1,5 +1,5 @@
 //
-//  cloud.hpp
+//  cloud.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -15,7 +15,7 @@
 #include <stdio.h>
 
 // LOCAL
-#include "game_object.hpp"
+#include "game_object.h"
 
 class Cloud : public GameObject
 {

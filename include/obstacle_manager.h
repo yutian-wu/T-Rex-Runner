@@ -1,5 +1,5 @@
 //
-//  obstacle_manager.hpp
+//  obstacle_manager.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -14,10 +14,10 @@
 #include <deque>
 
 // LOCAL
-#include "game_object.hpp"
-#include "objects_manager.hpp"
-#include "renderer.hpp"
-#include "tree.hpp"
+#include "game_object.h"
+#include "objects_manager.h"
+#include "renderer.h"
+#include "tree.h"
 
 
 class ObstacleManager : public ObjectsManager

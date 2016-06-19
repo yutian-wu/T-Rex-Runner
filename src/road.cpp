@@ -12,8 +12,8 @@
 #include <stdlib.h>
 
 // LOCAL
-#include "road.hpp"
-#include "game_env.hpp"
+#include "road.h"
+#include "game_env.h"
 
 
 

@@ -1,5 +1,5 @@
 //
-//  background_manager.hpp
+//  background_manager.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -11,12 +11,12 @@
 
 
 // LOCAL
-#include "game_object.hpp"
-#include "objects_manager.hpp"
-#include "renderer.hpp"
+#include "game_object.h"
+#include "objects_manager.h"
+#include "renderer.h"
 
-#include "road.hpp"
-#include "cloud.hpp"
+#include "road.h"
+#include "cloud.h"
 
 
 class BackgroundManager : public ObjectsManager

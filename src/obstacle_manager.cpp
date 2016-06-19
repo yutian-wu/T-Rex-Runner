@@ -12,11 +12,11 @@
 #include <iostream>
 
 // LOCAL
-#include "objects_manager.hpp"
-#include "obstacle_manager.hpp"
-#include "game_env.hpp"
-#include "road.hpp"
-#include "utility.hpp"
+#include "objects_manager.h"
+#include "obstacle_manager.h"
+#include "game_env.h"
+#include "road.h"
+#include "utility.h"
 
 
 const int kTreeInterval = 230;

@@ -11,9 +11,9 @@
 #include <iostream>
 
 // LOCAL
-#include "dinosaur.hpp"
-#include "game_env.hpp"
-#include "renderer.hpp"
+#include "dinosaur.h"
+#include "game_env.h"
+#include "renderer.h"
 
 double Dinosaur::kJumpVy = 70;
 

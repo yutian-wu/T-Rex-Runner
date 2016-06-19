@@ -13,12 +13,12 @@
 #include <iostream>
 
 // LOCAL
-#include "objects_manager.hpp"
-#include "background_manager.hpp"
-#include "game_env.hpp"
-#include "road.hpp"
-#include "cloud.hpp"
-#include "renderer.hpp"
+#include "objects_manager.h"
+#include "background_manager.h"
+#include "game_env.h"
+#include "road.h"
+#include "cloud.h"
+#include "renderer.h"
 
 const int kNumOfRoads = GameParam::kSceneWidth / GameParam::kRoadWidth + 1;
 

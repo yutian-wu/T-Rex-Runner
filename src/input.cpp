@@ -6,4 +6,7 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#include "input.hpp"
+#include "input.h"
+
+
+Input::~Input() {}

@@ -1,5 +1,5 @@
 //
-//  collide_detector.hpp
+//  collide_detector.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -10,8 +10,8 @@
 #define collide_detector_hpp
 
 // LOCAL
-#include "game_object.hpp"
-#include "objects_manager.hpp"
+#include "game_object.h"
+#include "objects_manager.h"
 
 
 class CollisionDetector

@@ -1,5 +1,5 @@
 //
-//  game_object.hpp
+//  game_object.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -25,8 +25,8 @@ enum ObjectState
 #include <string>
 
 // LOCAL
-#include "renderer.hpp"
-#include "game_env.hpp"
+#include "renderer.h"
+#include "game_env.h"
 
 
 class GameObject

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#include "renderer.hpp"
+#include "renderer.h"
 
 #define OBJ(a, b) b,
 const std::string GAME_OBJECT_IMAGE[] =

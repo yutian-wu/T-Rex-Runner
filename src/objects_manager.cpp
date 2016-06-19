@@ -11,8 +11,8 @@
 #include <iostream>
 
 // LOCAL
-#include "objects_manager.hpp"
-#include "game_object.hpp"
+#include "objects_manager.h"
+#include "game_object.h"
 
 
 

@@ -10,9 +10,9 @@
 #include <iostream>
 
 // LOCAL
-#include "game_env.hpp"
-#include "tree.hpp"
-#include "renderer.hpp"
+#include "game_env.h"
+#include "tree.h"
+#include "renderer.h"
 
 
 const int kTreeWidth = 22;

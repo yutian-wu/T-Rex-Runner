@@ -19,30 +19,31 @@
 #include <iomanip>
 
 // LOCAL
-#include "game_env.hpp"
-#include "TRexGame.hpp"
-#include "dinosaur.hpp"
-#include "collision_detector.hpp"
-#include "background_manager.hpp"
-#include "obstacle_manager.hpp"
-#include "sdl_renderer.hpp"
-#include "utility.hpp"
+#include "game_env.h"
+#include "TRexGame.h"
+#include "dinosaur.h"
+#include "collision_detector.h"
+#include "background_manager.h"
+#include "obstacle_manager.h"
+#include "sdl_renderer.h"
+#include "input.h"
+#include "utility.h"
 
 
-const int kFrameRate = 50;
+const int kFrameRate = 60;
 
 const double TRexGame::kGameMaxSpeed = 2.0;
 const double TRexGame::kGameMinSpeed = 0.5;
 
 
-TRexGame::TRexGame(Renderer* renderer)
+TRexGame::TRexGame(Renderer* renderer, Input* input)
 {
+	input_ = input;
 	renderer_ = renderer;
 	background_manager_ = new BackgroundManager();
 	obstacle_manager_ = new ObstacleManager();
 	dinosaur_ = new Dinosaur(GameParam::kInitX, GameParam::kInitY);
 	collision_detector_ = new CollisionDetector(obstacle_manager_, dinosaur_);
-	game_speed_ = 1;
 }
 
 
@@ -71,93 +72,87 @@ void TRexGame::AccelerateGame(double delta_v)
 
 void TRexGame::Play()
 {
-  double goal = 0;
-	double render_interval = (double)1/kFrameRate;
-	bool collided = false;
+	GameInit();
 	
   std::cout << std::setprecision(3);
   
-	while (!GameParam::Quit() && !collided)
+	while (!GameParam::Quit() && !collided_)
 	{
-		SDL_Event e;
-		while(SDL_PollEvent(&e) == 1)
-		{
-			if(e.type == SDL_QUIT)
-			{
-				GameParam::SetQuit(true);
-      }
-      else if (e.type == SDL_KEYDOWN)
-      {
-        if (dinosaur_->IsJumping()) 
+		GameCommand cmd = input_->GetCommand();
+		
+		switch (cmd)
+    {
+      case NIL:
+        break;
+      case QUIT:
+        GameParam::SetQuit(true);
+        return;
+      case SPACE:
+        if (!dinosaur_->IsJumping())
         {
-          if (dinosaur_->GetVY() > 0 && e.key.keysym.sym == SDLK_DOWN)
-            dinosaur_->SpeedUp(1.2); 
+          dinosaur_->Jump();
         }
-        else
+        break;
+      case LEFT:
+        AccelerateGame(-0.1);
+        time_interval_ = render_interval_ * game_speed_;
+        break;
+      case RIGHT:
+        AccelerateGame(0.1);
+        time_interval_ = render_interval_ * game_speed_;
+        break;
+      case DOWN:
+        if (dinosaur_->GetVY() > 0)
         {
-          switch (e.key.keysym.sym)
-          {
-          case SDLK_SPACE:
-              dinosaur_->Jump();
-              break;
-          case SDLK_LEFT:
-              AccelerateGame(-0.1);
-              break;
-          case SDLK_RIGHT:
-              AccelerateGame(0.1);
-              break;
-          default: break;
-          }
+          dinosaur_->SpeedUp(1.2);
         }
-      }
-    }
-    
-		renderer_->Clear();
-		double time_interval = render_interval * game_speed_;
-		
-    goal += time_interval;
-    // std::cout << time_interval << " Goal: " << goal << std::endl;
-    
-		background_manager_->UpdateLocation(time_interval);
-		background_manager_->Render(*renderer_);
-		
-		obstacle_manager_->UpdateLocation(time_interval);
-		obstacle_manager_->Render(*renderer_);
-		
-	  dinosaur_->UpdateLocation(time_interval);
-		dinosaur_->Render(*renderer_);
-		
-		renderer_->Present();
-
-		collided = obstacle_manager_->CollidedWith(*dinosaur_);
-		
-		if (collided)
-		{
-			std::this_thread::sleep_for(std::chrono::milliseconds(2*1000));
-			collided = false;
-      game_speed_ = 1;
-			obstacle_manager_->Init();
-			background_manager_->Init();
-      dinosaur_->Init();
-      goal = 0;
+        break;
+      default: break;
 		}
 		
-		std::this_thread::sleep_for(std::chrono::milliseconds((int)render_interval*1000));
-	}
-	
-	while (!GameParam::Quit())
-	{
-		SDL_Event e;
-		while(SDL_PollEvent(&e) != 0)
+		renderer_->Clear();
+    
+		Update(time_interval_);
+		
+		renderer_->Present(); 
+
+		collided_ = obstacle_manager_->CollidedWith(*dinosaur_);
+		
+		std::this_thread::sleep_for(std::chrono::milliseconds((int)render_interval_*1000));
+		
+		if (collided_)
 		{
-			if(e.type == SDL_QUIT)
-			{
-				GameParam::SetQuit(true);
-			}
+			std::this_thread::sleep_for(std::chrono::milliseconds(2*1000));
+			GameInit();
 		}
 	}
 }
 
 
+void TRexGame::Update(double time_interval)
+{
+	background_manager_->UpdateLocation(time_interval);
+	background_manager_->Render(*renderer_);
 
+	obstacle_manager_->UpdateLocation(time_interval);
+	obstacle_manager_->Render(*renderer_);
+
+	dinosaur_->UpdateLocation(time_interval);
+	dinosaur_->Render(*renderer_);
+}
+
+
+void TRexGame::GameInit()
+{
+	score_ = 0;
+	collided_ = false;
+	game_speed_ = 1;
+	render_interval_ = (double)1 / kFrameRate;
+	time_interval_ = render_interval_ * game_speed_;
+	
+	obstacle_manager_->Init();
+	//background_manager_->Init();
+	dinosaur_->Init();
+  input_->Init(); 
+}
 

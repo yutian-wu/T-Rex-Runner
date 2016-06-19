@@ -1,5 +1,5 @@
 //
-//  sdl_renderer.hpp
+//  sdl_renderer.h
 //  T-Rex-Runner
 //
 //  Created by Tim on 2016-06-05.
@@ -19,7 +19,7 @@
 #include <SDL2_image/SDL_image.h>
 
 // LOCAL
-#include "renderer.hpp"
+#include "renderer.h"
 
 class SDLRenderer : public Renderer
 {
