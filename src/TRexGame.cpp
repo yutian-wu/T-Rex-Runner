@@ -115,7 +115,7 @@ void TRexGame::Play()
 		renderer_->Clear();
 		double time_interval = render_interval * game_speed_;
 		
-    goal += time_interval; //* GameParam::kDinoSpeed;
+    goal += time_interval;
     // std::cout << time_interval << " Goal: " << goal << std::endl;
     
 		background_manager_->UpdateLocation(time_interval);
