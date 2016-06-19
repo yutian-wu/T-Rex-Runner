@@ -1,4 +1,4 @@
-
+![]({{site.baseurl}}//t-rex.gif)
 
 SDL2 Dynamic-link library required for building.
 
