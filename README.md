@@ -1,4 +1,5 @@
-![]({{site.baseurl}}//t-rex.gif)
+![]({{site.baseurl}}/https://github.com/tim-ytw/t-rex-runner/blob/master/t-rex.gif)
+
 
 SDL2 Dynamic-link library required for building.
 
