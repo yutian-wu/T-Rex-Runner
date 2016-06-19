@@ -1,4 +1,4 @@
-![demo](demo/t-rex.gif)
+![demo](demo/t-rex-demo.gif)
 
 Jump: SPACE
 
