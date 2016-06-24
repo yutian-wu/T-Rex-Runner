@@ -151,8 +151,8 @@ void TRexGame::GameInit()
 	time_interval_ = render_interval_ * game_speed_;
 	
 	obstacle_manager_->Init();
-	//background_manager_->Init();
+	background_manager_->Init();
 	dinosaur_->Init();
-  input_->Init(); 
+  input_->Init();  
 }
 

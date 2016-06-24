@@ -55,6 +55,6 @@ GameCommand SDLInput::GetCommand()
 
 void SDLInput::Init()
 {
-	SDL_FlushEvent(SDL_KEYDOWN); 
+	SDL_FlushEvent(SDL_KEYDOWN);  
 }
 

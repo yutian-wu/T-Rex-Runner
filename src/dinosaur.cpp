@@ -15,17 +15,14 @@
 #include "game_env.h"
 #include "renderer.h"
 
-double Dinosaur::kJumpVy = 70;
+double Dinosaur::kJumpVy = 78;
 
 double Dinosaur::kFeetSwitchFreq = 1;
 
 const bool kLeftFoot = true;
 const bool kRightFoot = false;
 
-Dinosaur::Dinosaur(int x, int y): GameObject(TRex::DINOSAUR, x, y)
-{
-	Init();
-}
+Dinosaur::Dinosaur(int x, int y): GameObject(TRex::DINOSAUR, x, y) {}
 
 Dinosaur::~Dinosaur() {}
 

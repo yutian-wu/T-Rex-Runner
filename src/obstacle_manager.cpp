@@ -22,10 +22,7 @@
 const int kTreeInterval = 230;
 const double kTreeFreq = 0.08;
 
-ObstacleManager::ObstacleManager()
-{
-	Init();
-}
+ObstacleManager::ObstacleManager() {}
 
 
 ObstacleManager::~ObstacleManager()
@@ -64,7 +61,7 @@ void ObstacleManager::UpdateLocation(double time)
 	else
 	{
 		int prev_tree_dist = GameParam::kSceneWidth - (*(--trees_.end()))->GetTopRightX();
-		if (prev_tree_dist > kTreeInterval || within(prev_tree_dist, 22, 30))
+		if (prev_tree_dist > kTreeInterval)
 		{
 			SpawnATree(prob);
 		}

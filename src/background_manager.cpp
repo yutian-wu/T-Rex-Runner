@@ -23,10 +23,7 @@
 const int kNumOfRoads = GameParam::kSceneWidth / GameParam::kRoadWidth + 1;
 
 
-BackgroundManager::BackgroundManager()
-{
-	Init();
-}
+BackgroundManager::BackgroundManager() {}
 
 
 void BackgroundManager::Init()
@@ -58,9 +55,13 @@ void BackgroundManager::UpdateLocation(double time)
 	ObjectsManager::UpdateLocation(clouds_, time);
 	
 	/* Randomly spawn a cloud */
-	if (rand()%(int)(20/time) == 0)
-		clouds_.push_back(Cloud::GetCloud());
-	
+  if (rand()%(int)(10/time) == 0 &&
+      (clouds_.size() == 0 ||
+       GameParam::kSceneWidth - clouds_.back()->GetTopRightX() > 60))
+  {
+    clouds_.push_back(Cloud::GetCloud());
+  }
+  
 	/* Supply new Road if necessary */
 	while (roads_.back()->GetTopRightX() < GameParam::kSceneWidth)
 	{
