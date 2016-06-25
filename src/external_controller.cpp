@@ -7,15 +7,10 @@
 //
 
 // CPP
-#include <thread>
-#include <chrono>
-#include "pthread.h"
 #include <iostream>
-
 
 // SDL2
 #include <SDL2/SDL.h>
-#include "SDL2/SDL_thread.h"
 
 // LOCAL
 #include "external_controller.h"
@@ -25,15 +20,10 @@
 #include "game_env.h"
 
 
-
 Controller::Controller() {}
 
 Controller::~Controller() {}
 
-
-int windowListener(void* data);
-
-int checkQuit(void* data);
 
 void Controller::Play()
 {
@@ -44,7 +34,6 @@ void Controller::Play()
 	input->Init();
 
 	TRexGame game(renderer, input);
-	
 	game.Play();
 	
 	delete renderer;

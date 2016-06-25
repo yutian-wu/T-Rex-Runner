@@ -15,16 +15,7 @@
 #include "game_object.h"
 
 
-
-
 ObjectsManager::~ObjectsManager() {}
-
-
-void ObjectsManager::Run()
-{
-	// TO DO
-}
-
 
 
 void ObjectsManager::DestroyObjects(GameObjectContainer& objects)

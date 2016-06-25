@@ -55,8 +55,7 @@ void BackgroundManager::UpdateLocation(double time)
 	ObjectsManager::UpdateLocation(clouds_, time);
 	
 	/* Randomly spawn a cloud */
-  if (rand()%(int)(10/time) == 0 &&
-      (clouds_.size() == 0 ||
+  if (rand()%(int)(10/time) == 0 && (clouds_.size() == 0 ||
        GameParam::kSceneWidth - clouds_.back()->GetTopRightX() > 60))
   {
     clouds_.push_back(Cloud::GetCloud());

@@ -17,7 +17,6 @@
 #include "utility.h"
 
 
-
 GameObject::GameObject(TRex::Object obj, double x, double y) : obj_(obj)
 {
   x_ = x;
@@ -33,10 +32,7 @@ GameObject::GameObject(TRex::Object obj, double x, double y) : obj_(obj)
 }
 
 
-GameObject::~GameObject()
-{
-	// TO DO
-}
+GameObject::~GameObject() {}
 
 
 void GameObject::Render(Renderer& renderer)
@@ -83,8 +79,6 @@ bool GameObject::CollidedWith(const GameObject& obj, int w, int h) const
 
 void GameObject::UpdateLocation(double time)
 {
-  // printf("Moved x %f y %f in time %f\n", displacement(v_x_, a_x_, time), displacement(v_y_, a_y_, time), time);
-  
   x_ += displacement(v_x_, a_x_, time);
   y_ += displacement(v_y_, a_y_, time);
   v_x_ += time * a_x_;

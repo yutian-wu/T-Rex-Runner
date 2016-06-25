@@ -38,7 +38,7 @@ Road::~Road() {}
 void Road::Init()
 {
 	y_ = GameParam::kSceneHeight - GameParam::kHorizonHeight;
-	v_x_ = (-1)*GameParam::kDinoSpeed;
+	v_x_ = (-1)*GameParam::gDinoSpeed;
 	width_ = GameParam::kRoadWidth;
 	height_ = kRoadHeight;
 }

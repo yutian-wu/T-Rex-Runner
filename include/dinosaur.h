@@ -35,14 +35,11 @@ public:
 	DINO_STATE State();
 	
 private:
-	void SwitchFoot();
 	
 	static double kJumpVy;
 	static double kFeetSwitchFreq;
 	
 	double time_;
-	bool foot_;
-	
 	
 	DINO_STATE state_;
   int dino_run;

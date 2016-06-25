@@ -73,19 +73,16 @@ void TRexGame::AccelerateGame(double delta_v)
 void TRexGame::Play()
 {
 	GameInit();
-	
-  std::cout << std::setprecision(3);
   
-	while (!GameParam::Quit() && !collided_)
+	while (!GameParam::gQuit && !collided_)
 	{
 		GameCommand cmd = input_->GetCommand();
-		
 		switch (cmd)
     {
       case NIL:
         break;
       case QUIT:
-        GameParam::SetQuit(true);
+        GameParam::gQuit = true; 
         return;
       case SPACE:
         if (!dinosaur_->IsJumping())
@@ -111,20 +108,16 @@ void TRexGame::Play()
 		}
 		
 		renderer_->Clear();
-    
 		Update(time_interval_);
-		
-		renderer_->Present(); 
+		renderer_->Present();
 
 		collided_ = obstacle_manager_->CollidedWith(*dinosaur_);
-		
-		std::this_thread::sleep_for(std::chrono::milliseconds((int)render_interval_*1000));
-		
 		if (collided_)
 		{
 			std::this_thread::sleep_for(std::chrono::milliseconds(2*1000));
 			GameInit();
 		}
+    std::this_thread::sleep_for(std::chrono::milliseconds((int)render_interval_*1000));
 	}
 }
 

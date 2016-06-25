@@ -22,8 +22,7 @@ class ObjectsManager
 	
 public:
 	virtual ~ObjectsManager();
-	
-	void Run();
+
 	virtual void Init() = 0;
 	virtual void Render(Renderer& renderer) = 0;
 	virtual bool CollidedWith(const GameObject& obj) = 0;

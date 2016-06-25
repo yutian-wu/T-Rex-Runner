@@ -19,7 +19,6 @@ enum ObjectState
 };
 
 
-
 // CPP
 #include <deque>
 #include <string>
@@ -36,6 +35,7 @@ public:
 	explicit GameObject(double x, double y, std::string texture_file);
 	virtual ~GameObject();
 	
+  /* Accessors */
 	int GetWidth();
 	int GetHeight();
 	double GetX();
@@ -56,10 +56,10 @@ public:
 	virtual bool CollidedWith(const GameObject& obj, int width = -1, int height = -1) const;
 	
 protected:
-	
 	std::string kTextureFile;
-	bool collided_;
 	ObjectState state_;
+  TRex::Object obj_;
+  bool collided_;
 	
 	/* Size */
 	int width_;
@@ -76,8 +76,6 @@ protected:
 	/* Accelerations */
 	double a_x_;
 	double a_y_;
-
-	TRex::Object obj_;
 };
 
 typedef std::deque<GameObject*> GameObjectContainer; 

@@ -21,12 +21,6 @@ CollisionDetector::~CollisionDetector() {}
 
 void CollisionDetector::Run()
 {
-	while (!GameParam::Quit())
-	{
-		if (obstacles_->CollidedWith(*dinosaur_))
-		{
-			GameParam::SetCollision(true);
-		}
-	}
+	// TO DO
 }
 
