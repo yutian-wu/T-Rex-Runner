@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef background_manager_hpp
-#define background_manager_hpp
+#ifndef background_manager_h
+#define background_manager_h
 
 
 // LOCAL
@@ -39,4 +39,4 @@ private:
 };
 
 
-#endif /* background_manager_hpp */
+#endif /* background_manager_h */

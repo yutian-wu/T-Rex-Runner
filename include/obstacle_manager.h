@@ -38,4 +38,4 @@ private:
 };
 
 
-#endif /* obstacle_manager_hpp */
+#endif /* obstacle_manager_h */

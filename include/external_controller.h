@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef external_controller_hpp
-#define external_controller_hpp
+#ifndef external_controller_h
+#define external_controller_h
 
 
 
@@ -18,10 +18,8 @@ public:
 	~Controller();
 	
 	void Play();
-	
 };
 
 
 
-
-#endif /* external_controller_hpp */
+#endif /* external_controller_h */

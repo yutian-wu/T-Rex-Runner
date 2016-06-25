@@ -6,9 +6,10 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef utility_hpp
-#define utility_hpp
+#ifndef utility_h
+#define utility_h
 
+// CPP
 #include <stdio.h>
 #include <math.h>
 
@@ -46,4 +47,4 @@ inline int getMax(int a, int b)
 
 
 
-#endif /* utility_hpp */
+#endif /* utility_h */

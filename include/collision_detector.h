@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef collide_detector_hpp
-#define collide_detector_hpp
+#ifndef collide_detector_h
+#define collide_detector_h
 
 // LOCAL
 #include "game_object.h"
@@ -29,4 +29,4 @@ private:
 
 
 
-#endif /* collide_detector_hpp */
+#endif /* collide_detector_h */

@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef road_hpp
-#define road_hpp
+#ifndef road_h
+#define road_h
 
 // CPP
 #include <stdio.h>
@@ -19,10 +19,10 @@ class BackgroundManager;
 
 class Road : public GameObject
 {
-	friend class BackgroundManager;
+  friend class BackgroundManager;
 	
 public:
-	Road(int x, int y);
+	explicit Road(int x, int y);
 	Road();
 	~Road();
 	
@@ -36,7 +36,4 @@ private:
 	static const int kRoadHeight = 15;
 };
 
-
-
-
-#endif /* road_hpp */
+#endif /* road_h */

@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef sdl_renderer_hpp
-#define sdl_renderer_hpp
+#ifndef sdl_renderer_h
+#define sdl_renderer_h
 
 // CPP
 #include <vector>
@@ -31,9 +31,7 @@ public:
 	void Clear();
 	void Present();
 	void GetSceneSize(int& width, int& height);
-	
 	void Render(const TRex::Object& obj, const GameShape* src, const GameShape* dest);
-	
 	void Render(const TRex::Object& obj,
 							const int x, const int y, const int w = 0, const int h = 0);
 	
@@ -47,4 +45,4 @@ private:
 	std::vector<SDL_Rect> texture_sizes_; 
 };
 
-#endif /* sdl_renderer_hpp */
+#endif /* sdl_renderer_h */

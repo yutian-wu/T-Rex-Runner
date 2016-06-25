@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef tree_hpp
-#define tree_hpp
+#ifndef tree_h
+#define tree_h
 
 
 // CPP
@@ -19,10 +19,12 @@
 class Tree : public GameObject
 {
 public:
-	Tree(int x, int y);
+	explicit Tree(int x, int y);
 	~Tree();
 	
 	static GameObject* GetTree(int x, int y);
 };
 
-#endif /* tree_hpp */
+#endif /* tree_h */
+
+

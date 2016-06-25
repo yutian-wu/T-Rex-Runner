@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef TRexGame_hpp
-#define TRexGame_hpp
+#ifndef TRexGame_h
+#define TRexGame_h
 
 
 // LOCAL
@@ -33,7 +33,7 @@ class Input;
 class TRexGame
 {
 public:
-	TRexGame(Renderer* renderer, Input* input);
+	explicit TRexGame(Renderer* renderer, Input* input);
 	~TRexGame();
 	
 	void Play();
@@ -61,4 +61,4 @@ private:
 	int score_;
 };
 
-#endif /* TRexGame_hpp */
+#endif /* TRexGame_h */

@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef dinosaur_hpp
-#define dinosaur_hpp
+#ifndef dinosaur_h
+#define dinosaur_h
 
 // LOCAL
 #include "game_object.h"
@@ -23,7 +23,7 @@ enum DINO_STATE
 class Dinosaur : public GameObject
 {
 public:
-	Dinosaur(int x, int y);
+	explicit Dinosaur(int x, int y);
 	~Dinosaur();
 	
 	virtual bool CollidedWith(const GameObject& obj, int width = -1, int height = -1) const;
@@ -49,4 +49,4 @@ private:
 };
 
 
-#endif /* dinosaur_hpp */
+#endif /* dinosaur_h */

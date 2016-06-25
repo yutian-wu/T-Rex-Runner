@@ -6,22 +6,22 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef input_hpp
-#define input_hpp
+#ifndef input_h
+#define input_h
 
 
 // LOCAL
 #include "TRexGame.h"
 
+
 class Input
 {
-
 public:
 	virtual ~Input();
+  
 	virtual void Init() = 0;
 	virtual GameCommand GetCommand() = 0;
 };
 
 
-
-#endif /* input_hpp */
+#endif /* input_h */

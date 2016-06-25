@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef renderer_hpp
-#define renderer_hpp
+#ifndef renderer_h
+#define renderer_h
 
 // CPP
 #include <string>
@@ -39,5 +39,5 @@ public:
 
 
 
-#endif /* renderer_hpp */
+#endif /* renderer_h */
 

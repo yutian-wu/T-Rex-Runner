@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef obstacle_manager_hpp
-#define obstacle_manager_hpp
+#ifndef obstacle_manager_h
+#define obstacle_manager_h
 
 // CPP
 #include <stdio.h>
@@ -38,7 +38,4 @@ protected:
 };
 
 
-
-
-
-#endif /* obstacle_manager_hpp */
+#endif /* obstacle_manager_h */

@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef cloud_hpp
-#define cloud_hpp
+#ifndef cloud_h
+#define cloud_h
 
 
 
@@ -21,7 +21,7 @@ class Cloud : public GameObject
 {
 public:
 	Cloud();
-	Cloud(int x, int y);
+	explicit Cloud(int x, int y);
 	~Cloud();
 	
 	static GameObject* GetCloud(int x = -1, int y = -1);
@@ -36,4 +36,4 @@ private:
 
 
 
-#endif /* cloud_hpp */
+#endif /* cloud_h */

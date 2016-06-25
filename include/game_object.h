@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef game_object_hpp
-#define game_object_hpp
+#ifndef game_object_h
+#define game_object_h
 
 
 enum ObjectState
@@ -32,8 +32,8 @@ enum ObjectState
 class GameObject
 {
 public:
-	GameObject(TRex::Object obj, double x = 0, double y = 0);
-	GameObject(double x, double y, std::string texture_file);
+	explicit GameObject(TRex::Object obj, double x = 0, double y = 0);
+	explicit GameObject(double x, double y, std::string texture_file);
 	virtual ~GameObject();
 	
 	int GetWidth();
@@ -82,4 +82,4 @@ protected:
 
 typedef std::deque<GameObject*> GameObjectContainer; 
 
-#endif /* game_object_hpp */
+#endif /* game_object_h */

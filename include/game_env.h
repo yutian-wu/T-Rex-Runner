@@ -6,8 +6,8 @@
 //  Copyright © 2016 Tim. All rights reserved.
 //
 
-#ifndef game_env_hpp
-#define game_env_hpp
+#ifndef game_env_h
+#define game_env_h
 
 #include <stdio.h>
 
@@ -75,4 +75,4 @@ private:
 
 
 
-#endif /* game_env_hpp */
+#endif /* game_env_h */
