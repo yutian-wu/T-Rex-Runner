@@ -41,24 +41,24 @@ public:
 private:
 	void GameInit();
 	bool AcceptInput();
-	void AccelerateGame(double delta_a);
 	void Update(double time_interval);
+  void AccelerateGame(double delta_a);
 	
 	static const double kGameMaxSpeed;
 	static const double kGameMinSpeed;
 	
 	Input* input_;
 	Renderer* renderer_;
-	CollisionDetector* collision_detector_;
-	ObjectsManager* background_manager_;
-	ObjectsManager* obstacle_manager_;
 	Dinosaur* dinosaur_;
-	
+  ObjectsManager* obstacle_manager_;
+	ObjectsManager* background_manager_;
+  CollisionDetector* collision_detector_;
+
+  int score_;
+  double collided_;
 	double game_speed_;
-	double render_interval_ ;
-	double time_interval_ ;
-	double collided_;
-	int score_;
+	double time_interval_;
+	double render_interval_;
 };
 
 #endif /* TRexGame_h */

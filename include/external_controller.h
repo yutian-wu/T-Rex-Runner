@@ -9,14 +9,9 @@
 #ifndef external_controller_h
 #define external_controller_h
 
-
-
 class Controller
 {
 public:
-	Controller();
-	~Controller();
-	
 	void Play();
 };
 

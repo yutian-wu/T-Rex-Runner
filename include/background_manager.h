@@ -27,12 +27,12 @@ public:
 	
 	void Init();
 	void Render(Renderer& renderer);
+  void UpdateLocation(double time);
 	bool CollidedWith(const GameObject& obj);
-	void UpdateLocation(double time);
 	
 private:
+  static TRex::Object getRoad();
 	void RenderList(std::deque<GameObject*>& list, Renderer& renderer);
-	static TRex::Object getRoad();
 	
 	std::deque<GameObject*> roads_;
 	std::deque<GameObject*> clouds_;

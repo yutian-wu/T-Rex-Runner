@@ -21,9 +21,6 @@ double Dinosaur::kFeetSwitchFreq = 1;
 
 Dinosaur::Dinosaur(int x, int y): GameObject(TRex::DINOSAUR, x, y) {}
 
-Dinosaur::~Dinosaur() {}
-
-
 void Dinosaur::UpdateLocation(double time)
 {
 	GameObject::UpdateLocation(time);
@@ -33,7 +30,7 @@ void Dinosaur::UpdateLocation(double time)
 	if (y_ == GameParam::kInitY)
 	{
 		time_ += time;
-		if (time_ >= 1/(double)kFeetSwitchFreq)
+		if (time_ >= 1 / (double)kFeetSwitchFreq)
 		{
       obj_ = (TRex::DINOSAUR_LEFT_FOOT == obj_)?
               TRex::DINOSAUR_RIGHT_FOOT : TRex::DINOSAUR_LEFT_FOOT;
@@ -60,8 +57,8 @@ bool Dinosaur::CollidedWith(const GameObject& obj, int width, int height) const
 void Dinosaur::Jump(double v0)
 {
 	v_y_ = (-1)*v0;
+  obj_ = TRex::DINOSAUR_JUMP;
 	a_y_ = (-1)*GameParam::kGravitationalAcceleration;
-	obj_ = TRex::DINOSAUR_JUMP;	
 }
 
 
@@ -73,14 +70,14 @@ bool Dinosaur::IsJumping()
 
 void Dinosaur::Init()
 {
-	y_ = GameParam::kInitY;
 	v_x_ = 0;
 	v_y_ = 0;
 	a_y_ = 0;
+  time_ = 0;
 	width_ = 56;
 	height_ = 59;
-	time_ = 0;
-	obj_ = TRex::DINOSAUR_LEFT_FOOT;
+	y_ = GameParam::kInitY;
+  obj_ = TRex::DINOSAUR_LEFT_FOOT;
 }
 
 

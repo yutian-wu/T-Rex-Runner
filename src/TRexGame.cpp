@@ -14,20 +14,19 @@
 // CPP
 #include <thread>
 #include <chrono>
-#include "pthread.h"
-#include <iostream>
 #include <iomanip>
+#include <iostream>
 
 // LOCAL
+#include "input.h"
+#include "utility.h"
 #include "game_env.h"
 #include "TRexGame.h"
 #include "dinosaur.h"
+#include "sdl_renderer.h"
+#include "obstacle_manager.h"
 #include "collision_detector.h"
 #include "background_manager.h"
-#include "obstacle_manager.h"
-#include "sdl_renderer.h"
-#include "input.h"
-#include "utility.h"
 
 
 const int kFrameRate = 60;
@@ -40,9 +39,9 @@ TRexGame::TRexGame(Renderer* renderer, Input* input)
 {
 	input_ = input;
 	renderer_ = renderer;
-	background_manager_ = new BackgroundManager();
 	obstacle_manager_ = new ObstacleManager();
-	dinosaur_ = new Dinosaur(GameParam::kInitX, GameParam::kInitY);
+	background_manager_ = new BackgroundManager();
+  dinosaur_ = new Dinosaur(GameParam::kInitX, GameParam::kInitY);
 	collision_detector_ = new CollisionDetector(obstacle_manager_, dinosaur_);
 }
 
@@ -138,14 +137,14 @@ void TRexGame::Update(double time_interval)
 void TRexGame::GameInit()
 {
 	score_ = 0;
-	collided_ = false;
 	game_speed_ = 1;
+  collided_ = false;
 	render_interval_ = (double)1 / kFrameRate;
 	time_interval_ = render_interval_ * game_speed_;
 	
+  input_->Init();
+  dinosaur_->Init();
 	obstacle_manager_->Init();
 	background_manager_->Init();
-	dinosaur_->Init();
-  input_->Init();  
 }
 

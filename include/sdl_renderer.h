@@ -30,13 +30,14 @@ public:
 	void Clear();
 	void Present();
 	void GetSceneSize(int& width, int& height);
-	void Render(const TRex::Object& obj, const GameShape* src, const GameShape* dest);
-	void Render(const TRex::Object& obj,
-							const int x, const int y, const int w = 0, const int h = 0);
+	void Render(const TRex::Object& obj, const GameShape* src,
+              const GameShape* dest);
+	void Render(const TRex::Object& obj, const int x, const int y,
+              const int w = 0, const int h = 0);
 	
 private:
+ 	void DestroyTextures(); 
 	SDL_Texture* LoadTexture(std::string file);
-	void DestroyTextures();
 	
 	SDL_Window* window_;
 	SDL_Renderer* renderer_;

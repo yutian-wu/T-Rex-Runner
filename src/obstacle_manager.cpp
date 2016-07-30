@@ -40,10 +40,12 @@ void ObstacleManager::Init()
 bool ObstacleManager::SpawnATree(double probability)
 {
 	int tree = rand() % (int)(1/probability);
-	if (tree > 1) return false;
-	GameObject* new_tree = Tree::GetTree(GameParam::kSceneWidth, 0);
-	trees_.push_back(new_tree);
-	return true;
+	if (tree <= 1)
+  {
+    trees_.push_back(Tree::GetTree(GameParam::kSceneWidth, 0));
+    return true;
+  }
+  return false;
 }
 
 
@@ -53,14 +55,17 @@ void ObstacleManager::UpdateLocation(double time)
 	
 	double prob = time*kTreeFreq;
 	
-	// Spawn a new tree if previous one is not so close
+	// Spawn a new tree if
+  //  1) There is currently no tree
 	if (trees_.size() == 0)
 	{
 		SpawnATree(prob);
 	}
 	else
 	{
-		int prev_tree_dist = GameParam::kSceneWidth - (*(--trees_.end()))->GetTopRightX();
+    // 2) There are trees and the rightmost one is not so close
+		int prev_tree_dist = GameParam::kSceneWidth -
+                         (*(--trees_.end()))->GetTopRightX();
 		if (prev_tree_dist > kTreeInterval)
 		{
 			SpawnATree(prob);

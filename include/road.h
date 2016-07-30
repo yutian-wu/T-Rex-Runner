@@ -22,16 +22,15 @@ class Road : public GameObject
   friend class BackgroundManager;
 	
 public:
-	explicit Road(int x, int y);
-	Road();
-	~Road();
+ 	Road();
+	Road(int x, int y);
 	
 	static GameObject* GetRoad(int x, int y);
 	bool CollidedWith(const GameObject& obj) const;
 	
 private:
+ 	void Init();
 	explicit Road(TRex::Object obj, int x = 0, int y =0);
-	void Init();
 	
 	static const int kRoadHeight = 15;
 };

@@ -23,25 +23,21 @@ enum DINO_STATE
 class Dinosaur : public GameObject
 {
 public:
-	explicit Dinosaur(int x, int y);
-	~Dinosaur();
-	
-	virtual bool CollidedWith(const GameObject& obj, int width = -1, int height = -1) const;
-	virtual void UpdateLocation(double time);
-	void Jump(double v0 = kJumpVy);
-	bool IsJumping();
-	void Init();
+	Dinosaur(int x, int y);
 
+  void Init();
+  bool IsJumping();
 	DINO_STATE State();
+	void Jump(double v0 = kJumpVy);
+	virtual void UpdateLocation(double time);
+  virtual bool CollidedWith(const GameObject& obj, int width = -1, int height = -1) const;
 	
 private:
-	
 	static double kJumpVy;
 	static double kFeetSwitchFreq;
 	
-	double time_;
-	
 	DINO_STATE state_;
+  double time_;
   int dino_run;
 };
 

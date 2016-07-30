@@ -20,11 +20,6 @@
 #include "game_env.h"
 
 
-Controller::Controller() {}
-
-Controller::~Controller() {}
-
-
 void Controller::Play()
 {
 	Renderer* renderer = new SDLRenderer();

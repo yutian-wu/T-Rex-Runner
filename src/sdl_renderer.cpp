@@ -11,7 +11,7 @@
 
 // SDL2
 #include <SDL2/SDL.h>
-#include <SDL2_image/SDL_image.h>
+#include "SDL2_image/SDL_image.h"
 
 // LOCAL
 #include "sdl_renderer.h"
@@ -133,9 +133,9 @@ void SDLRenderer::Render(const TRex::Object& obj, const GameShape* src, const Ga
 }
 
 
-void SDLRenderer::Render(const TRex::Object& obj, const int x, const int y, const int w, const int h)
+void SDLRenderer::Render(const TRex::Object& obj, const int x,
+                         const int y, const int w, const int h)
 {
-
 	SDL_Rect src_rect = texture_sizes_[obj];
 	SDL_Rect dest_rect = src_rect;
 	src_rect.x = 0;

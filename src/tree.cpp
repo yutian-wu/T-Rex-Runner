@@ -22,12 +22,10 @@ const int kInitY = GameParam::kSceneHeight - GameParam::kHorizonHeight - 33;
 
 Tree::Tree(int x, int y): GameObject(TRex::TREE, x, kInitY)
 {
-	v_x_ = (-1) * GameParam::gDinoSpeed;
 	width_ = kTreeWidth;
 	height_ = kTreeHeight;
+  v_x_ = (-1) * GameParam::gDinoSpeed;
 }
-
-Tree::~Tree() {}
 
 
 GameObject* Tree::GetTree(int x, int y)

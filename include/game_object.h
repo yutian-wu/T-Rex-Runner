@@ -31,44 +31,39 @@ enum ObjectState
 class GameObject
 {
 public:
-	explicit GameObject(TRex::Object obj, double x = 0, double y = 0);
-	explicit GameObject(double x, double y, std::string texture_file);
+	GameObject(double x, double y, std::string texture_file);
+  explicit GameObject(TRex::Object obj, double x = 0, double y = 0);
 	virtual ~GameObject();
 	
   /* Accessors */
-	int GetWidth();
-	int GetHeight();
 	double GetX();
 	double GetY();
 	double GetVX();
 	double GetVY();
-	double GetTopRightX();
+  int GetWidth();
+  int GetHeight();
+  double GetTopRightX();
 	
 	/* Setters */
 	void SetVx(double v_x);
 	void SetVy(double v_y);
-	void SetSize(int width, int height);
-	void SetPosition(double x = -1, double y = -1);
 	void SpeedUp(double scale);
-	
+  void SetSize(int width, int height);
+	void SetPosition(double x = -1, double y = -1);
+
 	virtual void UpdateLocation(double time);
 	virtual void Render(Renderer& renderer);
 	virtual bool CollidedWith(const GameObject& obj, int width = -1, int height = -1) const;
 	
 protected:
-	std::string kTextureFile;
-	ObjectState state_;
-  TRex::Object obj_;
-  bool collided_;
-	
-	/* Size */
-	int width_;
-	int height_;
-	
 	/* Coordinate */
 	double x_;
 	double y_;
 	
+  /* Size */
+  int width_;
+  int height_;
+  
 	/* Velocity */
 	double v_x_;
 	double v_y_;
@@ -76,6 +71,10 @@ protected:
 	/* Accelerations */
 	double a_x_;
 	double a_y_;
+  
+  bool collided_;
+  TRex::Object obj_;
+  ObjectState state_;
 };
 
 typedef std::deque<GameObject*> GameObjectContainer; 

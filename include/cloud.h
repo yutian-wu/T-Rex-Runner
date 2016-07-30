@@ -22,11 +22,10 @@ class Cloud : public GameObject
 public:
 	Cloud();
 	explicit Cloud(int x, int y);
-	~Cloud();
-	
+
+  bool CollidedWith(const GameObject& obj) const;
 	static GameObject* GetCloud(int x = -1, int y = -1);
-	bool CollidedWith(const GameObject& obj) const;
-	
+
 private:
 	void Init();
 };

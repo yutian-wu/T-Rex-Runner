@@ -15,7 +15,8 @@
 
 const double kCloudSpeed = 15;
 const int kCloudHeightMinimum = 80;
-const int kCloudHeightRange = GameParam::kSceneHeight - (GameParam::kHorizonHeight + kCloudHeightMinimum);
+const int kCloudHeightRange = GameParam::kSceneHeight -
+                              (GameParam::kHorizonHeight + kCloudHeightMinimum);
 
 const int kCloudWidth = 57;
 const int kCloudHeight = 20;
@@ -30,13 +31,11 @@ Cloud::Cloud(int x, int y): GameObject(TRex::CLOUD, x, y)
   Init();
 }
 
-Cloud::~Cloud() {}
-
 void Cloud::Init()
 {
-  v_x_ = (-1) * kCloudSpeed;
   width_ = kCloudWidth;
   height_ = kCloudHeight;
+  v_x_ = (-1) * kCloudSpeed;
 }
 
 bool Cloud::CollidedWith(const GameObject& obj) const

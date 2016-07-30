@@ -32,8 +32,6 @@ Road::Road(TRex::Object obj, int x, int y): GameObject(obj, x, y)
 	Init();
 }
 
-Road::~Road() {}
-
 
 void Road::Init()
 {

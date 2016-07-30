@@ -22,8 +22,7 @@ void ObjectsManager::DestroyObjects(GameObjectContainer& objects)
 {
 	while (!objects.empty())
 	{
-		GameObject* temp = objects.front();
-		delete temp;
+		delete objects.front();
 		objects.pop_front();
 	}
 }
@@ -42,15 +41,10 @@ void ObjectsManager::UpdateLocation(GameObjectContainer& list, double time, bool
 	if (outOfBoundCleared)
 	{
 		it = list.begin();
-		for(; it < list.end(); ++it)
+		for(; it != list.end() && list.size() != 0 && (*it)->GetTopRightX() <= 0; ++it)
 		{
-			if (list.size() == 0 || (*it)->GetX() + (*it)->GetWidth() > 0)
-			{
-				break;
-			}
-			GameObject* old_obj = list.front();
-			list.pop_front();
-			delete old_obj;
+			delete list.front();
+      list.pop_front();
 			it = list.begin();
 		}
 	}

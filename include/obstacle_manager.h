@@ -14,10 +14,10 @@
 #include <deque>
 
 // LOCAL
+#include "tree.h"
+#include "renderer.h"
 #include "game_object.h"
 #include "objects_manager.h"
-#include "renderer.h"
-#include "tree.h"
 
 
 class ObstacleManager : public ObjectsManager
@@ -27,14 +27,13 @@ public:
 	~ObstacleManager();
 	
 	void Init();
-	void UpdateLocation(double time);
 	void Render(Renderer& renderer);
-	bool CollidedWith(const GameObject& obj);
+  void UpdateLocation(double time);
+  bool CollidedWith(const GameObject& obj);
 	
 private:
-	bool SpawnATree(double likelihood);
-	
 	std::deque<GameObject*> trees_;
+	bool SpawnATree(double likelihood);
 };
 
 

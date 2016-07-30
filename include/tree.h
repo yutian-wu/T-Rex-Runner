@@ -19,8 +19,7 @@
 class Tree : public GameObject
 {
 public:
-	explicit Tree(int x, int y);
-	~Tree();
+	Tree(int x, int y);
 	
 	static GameObject* GetTree(int x, int y);
 };
