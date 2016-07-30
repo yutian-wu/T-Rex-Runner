@@ -2,16 +2,16 @@
 
 Jump: SPACE
 
-Accelerate: LEFT
+Accelerate: RIGHT
 
-Decelerate: RIGHT
+Decelerate: LEFT
 
 Gravitate: DOWN
 
 
 ## Building:
 
-SDL2 Dynamic-link library required for building.
+SDL2 (SDL2, SDL2_image and SDL2_TTF) libraries are required for building.
 
 You may download it from [here](https://www.libsdl.org/download-2.0.php "SDL2")
 
