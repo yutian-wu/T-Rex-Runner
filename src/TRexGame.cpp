@@ -21,7 +21,7 @@
 #include "background_manager.h"
 
 
-const int kFrameRate = 60;
+const int kFrameRate = 30;
 
 const double TRexGame::kGameMaxSpeed = 2.0;
 const double TRexGame::kGameMinSpeed = 0.5;
@@ -129,7 +129,7 @@ void TRexGame::Update(double time_interval)
 void TRexGame::GameInit()
 {
 	score_ = 0;
-	game_speed_ = 1;
+	game_speed_ = 0.1;
   collided_ = false;
 	render_interval_ = (double)1 / kFrameRate;
 	time_interval_ = render_interval_ * game_speed_;
