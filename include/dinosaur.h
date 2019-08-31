@@ -1,11 +1,3 @@
-//
-//  dinosaur.h
-//  T-Rex-Runner
-//
-//  Created by Tim on 2016-06-05.
-//  Copyright © 2016 Tim. All rights reserved.
-//
-
 #ifndef dinosaur_h
 #define dinosaur_h
 

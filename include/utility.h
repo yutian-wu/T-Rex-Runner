@@ -1,11 +1,3 @@
-//
-//  utility.h
-//  T-Rex-Runner
-//
-//  Created by Tim on 2016-06-12.
-//  Copyright © 2016 Tim. All rights reserved.
-//
-
 #ifndef utility_h
 #define utility_h
 

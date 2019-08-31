@@ -1,11 +1,3 @@
-//
-//  sdl_renderer.h
-//  T-Rex-Runner
-//
-//  Created by Tim on 2016-06-05.
-//  Copyright © 2016 Tim. All rights reserved.
-//
-
 #ifndef sdl_renderer_h
 #define sdl_renderer_h
 

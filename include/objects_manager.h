@@ -1,11 +1,3 @@
-//
-//  obstacle_manager.h
-//  T-Rex-Runner
-//
-//  Created by Tim on 2016-06-05.
-//  Copyright © 2016 Tim. All rights reserved.
-//
-
 #ifndef obstacle_manager_h
 #define obstacle_manager_h
 
